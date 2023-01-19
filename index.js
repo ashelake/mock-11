@@ -1,10 +1,10 @@
 const express = require("express");
 var cors = require("cors");
 const { connection } = require("./config/db");
-const { UserModel } = require("./modal/User.modal");
+
 const bcrypt = require("bcrypt");
 var jwt = require("jsonwebtoken");
-const { userData } = require("./Routes/user.Routes");
+const UserModel = require("./modal/user.modal");
 
 require("dotenv").config();
 const app = express();
@@ -43,7 +43,7 @@ app.post("/login", async (req, res) => {
     }
   });
 });
-app.use("/dashboard", userData);
+
 app.listen(process.env.PORT, async () => {
   try {
     await connection;

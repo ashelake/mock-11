@@ -1,4 +1,3 @@
-
 var mongoose = require("mongoose");
 
 const userSchema = new mongoose.Schema({
@@ -8,4 +7,4 @@ const userSchema = new mongoose.Schema({
 
 const UserModel = mongoose.model("mock-ii", userSchema);
 
-module.exports = { UserModel };
+module.exports = UserModel;
